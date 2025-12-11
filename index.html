@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHINKA - Global Services and Production</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #0a192f; /* Deep Navy */
+            --accent-color: #00bcd4;  /* Cyan/Teal */
+            --text-light: #ccd6f6;
+            --text-dark: #333;
+            --bg-light: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span { color: var(--accent-color); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 5%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto;
+        }
+
+        /* Home / Hero Section */
+        #home {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://source.unsplash.com/1600x900/?railway,train');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 300;
+        }
+
+        /* About & Experts */
+        .content-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Services Grid */
+        #services {
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Exclusives (Future Plans) */
+        #exclusives {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        #exclusives h2 { color: var(--white); }
+
+        .future-plan-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .future-text { flex: 1; min-width: 300px; }
+        .future-img { 
+            flex: 1; 
+            min-width: 300px;
+            height: 300px;
+            background-color: #233554;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            border: 1px dashed var(--accent-color);
+        }
+
+        /* Updates */
+        .updates-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .update-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .date { color: var(--accent-color); font-size: 0.9rem; font-weight: bold;}
+
+        /* Foundations (Team) */
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            width: 250px;
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background-image: url('https://via.placeholder.com/150'); /* Placeholder Image */
+            background-size: cover;
+        }
+
+        .member-role { color: var(--accent-color); font-weight: bold; }
+
+        /* Contact Form */
+        #contact { background-color: var(--bg-light); }
+        
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group { margin-bottom: 20px; }
+        
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button.btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button.btn:hover { background-color: var(--accent-color); }
+
+        /* Footer */
+        footer {
+            background-color: #020c1b;
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .social-links { margin: 20px 0; }
+        .social-links a {
+            color: var(--white);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .tagline { color: var(--accent-color); font-style: italic; margin-top: 10px;}
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Simplified for mobile */
+            #home h1 { font-size: 2rem; }
+            .future-plan-box { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            SHINKA <span>ATHRIN</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#exclusives">Future</a></li>
+                <li><a href="#team">Foundations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>SHINKA - GLOBAL SERVICES AND PRODUCTION</h1>
+        <p>Evolving Safety. Ensuring Value</p>
+    </section>
+
+    <section id="about">
+        <h2>Our Mission</h2>
+        <div class="content-box">
+            <p>At SHINKA, our mission is to deliver a RAM (Reliability, Availability and Maintainability) and Safety assistance in terms of preparation and/or independent review of essential documentation to customer.</p>
+        </div>
+    </section>
+
+    <section id="experts">
+        <h2>Your partners in RAM and Safety support</h2>
+        <div class="content-box">
+            <p>We have a highly skilled team with strong expertise in supporting customers throughout the development of rail products and projects. From the initial planning phase through to the Defects Liability Period (DLP), our team provides comprehensive assistance in the preparation and independent review of RAM (Reliability, Availability, Maintainability) and Safety deliverables, ensuring compliance, quality, and project success.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Services by SHINKA</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Reliability Prediction</h3>
+                <p>Forecasting component life using standards like MIL-HDBK-217 & Telcordia.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Reliability Modeling</h3>
+                <p>System availability simulations (RBD & Fault Tree Analysis).</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>FMECA</h3>
+                <p>Failure Mode, Effects, and Criticality Analysis to mitigate risks.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Reliability Analysis</h3>
+                <p>Data-driven analysis to optimize maintenance and uptime.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Safety Analyses</h3>
+                <p>Hazard Logs, Risk Assessment, and Safety Integrity Level (SIL) studies.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>Safety Assessment</h3>
+                <p>Independent review and Safety Case preparation for compliance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="exclusives">
+        <h2>Discover our future plans</h2>
+        <div class="future-plan-box">
+            <div class="future-text">
+                <p>As part of our growth strategy, SHINKA is preparing to enter the manufacturing sector. In future, we are going to research and design proprietary energy units aimed at decentralized power generation.</p>
+                <br>
+                <p>Our objective is to transition from service assurance to product creation, delivering innovative solutions that maximize energy utilization and cost-efficiency for our end-users.</p>
+            </div>
+            <div class="future-img">
+                [ Future Energy Unit Design ]
+            </div>
+        </div>
+    </section>
+
+    <section id="updates">
+        <h2>Latest Updates</h2>
+        <div class="updates-container">
+            <div class="update-card">
+                <span class="date">Dec 2025</span>
+                <h3>SHINKA Official Launch</h3>
+                <p>Successfully registered SHINKA Rail Assurance Services LLP.</p>
+            </div>
+            <div class="update-card">
+                <span class="date">Upcoming</span>
+                <h3>ISO 9001 Certification</h3>
+                <p>Initiating process for Quality Management System certification.</p>
+            </div>
+            <div class="update-card">
+                <span class="date">Project Win</span>
+                <h3>Metro Rail Consultancy</h3>
+                <p>Awarded sub-contract for Reliability Modeling on new Metro line.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2>SHINKA Foundations</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo"></div> <h3>[Name]</h3>
+                <p class="member-role">Founder</p>
+                <p>Visionary leader driving the evolution of rail safety.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo"></div> <h3>[Name]</h3>
+                <p class="member-role">CEO</p>
+                <p>Steering global operations and strategic growth.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo"></div> <h3>[Name]</h3>
+                <p class="member-role">CTO</p>
+                <p>Architecting the future of RAMS technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align: center; margin-bottom: 20px;">Looking for services or a career? Reach out to us.</p>
+        
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Inquiry Type</label>
+                <select id="type" name="type">
+                    <option value="Service Inquiry">Business / Service Inquiry</option>
+                    <option value="Job Application">Job Application</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message / Cover Letter</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="portfolio">Link to Resume/Portfolio (Google Drive/LinkedIn)</label>
+                <input type="text" id="portfolio" name="portfolio" placeholder="Paste link here">
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">X (Twitter)</a>
+        </div>
+        <p class="tagline">"Together let's build safer and dependable railway"</p>
+        <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2025 SHINKA Global Services and Production. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
