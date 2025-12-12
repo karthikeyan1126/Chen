@@ -86,17 +86,8 @@
             overflow: hidden;
             transition: transform 0.3s;
         }
-        .service-card-know-more {
-            .split-layout {
-                display: grid;
-                grid-template-column: 1fr 1fr;
-                gap: 50px;
-                align-items: center;
-            }
-            .about-text { text-align: left; }
-            .about-image img { border-radius: 8px; box-shadow: 0 }
-        }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-card:btn-know-more;
         .service-img { height: 180px; width: 100%; object-fit: cover; background: #ddd; }
         .service-info { padding: 20px; }
         .service-info h3 { color: var(--primary-navy); margin-bottom: 10px; }
@@ -328,6 +319,7 @@
 </body>
 
 </html>
+
 
 
 
