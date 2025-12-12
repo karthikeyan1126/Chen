@@ -4,475 +4,314 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHINKA - Global Services and Production</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* --- CSS STYLES --- */
+        /* --- CSS VARIABLES & RESET --- */
         :root {
-            --primary-color: #0a192f; /* White */
-            --accent-color: #00bcd4;  /* White */
-            --text-light: #ccd6f6;
-            --text-dark: #333;
-            --bg-light: #f4f4f4;
+            --primary-navy: #0a192f;
+            --accent-cyan: #00bcd4;
+            --light-gray: #f4f4f4;
             --white: #ffffff;
+            --text-dark: #333;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
-        /* Header & Nav */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        img { max-width: 100%; display: block; }
+        
+        /* --- HEADER --- */
         header {
-            background-color: var(--primary-color);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background: var(--primary-navy);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+        .logo-container img {
+            height: 50px; /* Adjust height based on your logo */
+            width: auto;
+        }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { color: var(--white); text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--accent-cyan); }
 
-        .logo {
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span { color: var(--accent-color); }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Sections General */
-        section {
-            padding: 60px 5%;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-            font-size: 2rem;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            margin: 10px auto;
-        }
-
-        /* Home / Hero Section */
+        /* --- HOME HERO SECTION --- */
         #home {
-            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://source.unsplash.com/1600x900/?railway,train');
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start; /* Left Alignment */
+            padding-left: 10%;
             color: var(--white);
         }
+        #home h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
+        #home h2 { font-size: 1.5rem; color: var(--accent-cyan); font-weight: 300; }
 
-        #home h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        /* --- GENERAL SECTION STYLES --- */
+        section { padding: 60px 10%; }
+        .section-title { text-align: center; font-size: 2rem; color: var(--primary-navy); margin-bottom: 40px; }
+        
+        /* --- ABOUT US (Split Layout) --- */
+        #about { background: var(--white); }
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
+        .about-text { text-align: right; } /* Right Alignment */
+        .about-image img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-        #home p {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            font-weight: 300;
-        }
-
-        /* About & Experts */
-        .content-box {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Services Grid */
-        #services {
-            background-color: var(--bg-light);
-        }
-
+        /* --- EXPERTS (Split Layout Reversed) --- */
+        #experts { background: var(--light-gray); }
+        .experts-text { text-align: left; } /* Left Alignment */
+        
+        /* --- SERVICES (Cards with Images) --- */
+        #services { background: var(--white); }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
-
         .service-card {
-            background: var(--white);
-            padding: 30px;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
             transition: transform 0.3s;
-            text-align: center;
         }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-img { height: 180px; width: 100%; object-fit: cover; background: #ddd; }
+        .service-info { padding: 20px; }
+        .service-info h3 { color: var(--primary-navy); margin-bottom: 10px; }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-top: 3px solid var(--accent-color);
-        }
+        /* --- EXCLUSIVES (Future Plans) --- */
+        #exclusives { background: var(--primary-navy); color: var(--white); text-align: center; }
+        #exclusives .section-title { color: var(--white); }
+        .exclusive-content { max-width: 800px; margin: 0 auto; font-size: 1.2rem; }
 
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        /* Exclusives (Future Plans) */
-        #exclusives {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        #exclusives h2 { color: var(--white); }
-
-        .future-plan-box {
+        /* --- LATEST UPDATES (Carousel) --- */
+        #updates { background: var(--light-gray); }
+        .carousel-container {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .future-text { flex: 1; min-width: 300px; }
-        .future-img { 
-            flex: 1; 
-            min-width: 300px;
-            height: 300px;
-            background-color: #233554;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-color);
-            border: 1px dashed var(--accent-color);
-        }
-
-        /* Updates */
-        .updates-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             gap: 20px;
+            padding-bottom: 20px;
         }
         .update-card {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
+            min-width: 300px;
+            background: var(--white);
+            border-radius: 8px;
+            scroll-snap-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .date { color: var(--accent-color); font-size: 0.9rem; font-weight: bold;}
+        .update-img { height: 150px; width: 100%; background: #ccc; object-fit: cover; border-top-left-radius: 8px; border-top-right-radius: 8px;}
+        .update-info { padding: 15px; }
 
-        /* Foundations (Team) */
+        /* --- FOUNDATIONS (Team) --- */
+        #foundations { background: var(--white); }
         .team-grid {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 40px;
         }
-
-        .team-member {
-            text-align: center;
-            width: 250px;
-        }
-
+        .team-member { text-align: center; width: 250px; }
         .member-photo {
-            width: 150px;
-            height: 150px;
-            background-color: #ddd;
+            width: 180px; height: 180px;
             border-radius: 50%;
+            object-fit: cover;
             margin: 0 auto 15px;
-            background-image: url('https://via.placeholder.com/150'); /* Placeholder Image */
-            background-size: cover;
+            border: 3px solid var(--accent-cyan);
+            background: #eee;
         }
+        .role { color: var(--accent-cyan); font-weight: bold; margin-bottom: 5px; }
 
-        .member-role { color: var(--accent-color); font-weight: bold; }
+        /* --- FOOTER --- */
+        footer { background: #050e1a; color: #ccc; text-align: center; padding: 40px 10%; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: var(--white); font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent-cyan); }
+        .tagline { color: var(--accent-cyan); font-style: italic; font-size: 1.1rem; }
 
-        /* Contact Form */
-        #contact { background-color: var(--bg-light); }
-        
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .form-group { margin-bottom: 20px; }
-        
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button.btn {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
-
-        button.btn:hover { background-color: var(--accent-color); }
-
-        /* Footer */
-        footer {
-            background-color: #020c1b;
-            color: var(--text-light);
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .social-links { margin: 20px 0; }
-        .social-links a {
-            color: var(--white);
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-        .tagline { color: var(--accent-color); font-style: italic; margin-top: 10px;}
-
-        /* Mobile Responsive */
+        /* --- MOBILE RESPONSIVE --- */
         @media (max-width: 768px) {
-            nav ul { display: none; } /* Simplified for mobile */
-            #home h1 { font-size: 2rem; }
-            .future-plan-box { flex-direction: column; }
+            .split-layout { grid-template-columns: 1fr; text-align: center; }
+            .about-text, .experts-text { text-align: center; }
+            .about-image { order: -1; margin-bottom: 20px; } /* Image on top for mobile */
+            #home { padding-left: 5%; align-items: center; text-align: center; }
+            nav ul { display: none; } /* Hide menu on mobile for simplicity */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-     .member-photo {
-            width: 150px;
-            height: 150px;
-            background-color: #ddd;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            background-image: url('https://via.placeholder.com/150'); /* Placeholder Image */
-            background-size: cover;
-        }
+        <div class="logo-container">
+            <img src="https://placehold.co/200x50?text=SHINKA+LOGO" alt="SHINKA Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">Mission</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#exclusives">Future</a></li>
-                <li><a href="#team">Foundations</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#updates">Updates</a></li>
+                <li><a href="#foundations">Team</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
         <h1>SHINKA - GLOBAL SERVICES AND PRODUCTION</h1>
-        <p>Evolving Safety. Ensuring Value</p>
+        <h2>Evolving Safety. Ensuring Value</h2>
     </section>
 
     <section id="about">
-        <h2>Our Mission</h2>
-        <div class="content-box">
-            <p>At SHINKA, our mission is to deliver a RAM (Reliability, Availability and Maintainability) and Safety assistance in terms of preparation and/or independent review of essential documentation to customer.</p>
+        <h2 class="section-title">Our Mission</h2>
+        <div class="split-layout">
+            <div class="about-image">
+                <img src="https://placehold.co/600x400?text=Image:+Person+Working" alt="Engineer working on RAMS">
+            </div>
+            <div class="about-text">
+                <p>At SHINKA, our mission is to deliver a RAM (Reliability, Availability and Maintainability) and Safety assistance in terms of preparation and/or independent review of essential documentation to customer.</p>
+            </div>
         </div>
     </section>
 
     <section id="experts">
-        <h2>Your partners in RAM and Safety support</h2>
-        <div class="content-box">
-            <p>We have a highly skilled team with strong expertise in supporting customers throughout the development of rail products and projects. From the initial planning phase through to the Defects Liability Period (DLP), our team provides comprehensive assistance in the preparation and independent review of RAM (Reliability, Availability, Maintainability) and Safety deliverables, ensuring compliance, quality, and project success.</p>
+        <h2 class="section-title">Your partners in RAM and Safety support</h2>
+        <div class="split-layout">
+            <div class="experts-text">
+                <p>We have a highly skilled team with strong expertise in supporting customers throughout the development of rail products and projects. From the initial planning phase through to the Defects Liability Period (DLP), our team provides comprehensive assistance in the preparation and independent review of RAM (Reliability, Availability, Maintainability) and Safety deliverables, ensuring compliance, quality, and project success.</p>
+            </div>
+            <div class="experts-image">
+                <img src="https://placehold.co/600x400?text=Image:+Team+Discussing" alt="Team meeting">
+            </div>
         </div>
     </section>
 
     <section id="services">
-        <h2>Services by SHINKA</h2>
+        <h2 class="section-title">Services by SHINKA</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Reliability Prediction</h3>
-                <p>Forecasting component life using standards like MIL-HDBK-217 & Telcordia.</p>
+                <img src="https://placehold.co/400x200?text=Reliability+Prediction" class="service-img" alt="Prediction">
+                <div class="service-info">
+                    <h3>Reliability Prediction</h3>
+                    <p>MTBF calculations using MIL-HDBK-217 & Telcordia standards.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">🏗️</div>
-                <h3>Reliability Modeling</h3>
-                <p>System availability simulations (RBD & Fault Tree Analysis).</p>
+                <img src="https://placehold.co/400x200?text=Reliability+Modeling" class="service-img" alt="Modeling">
+                <div class="service-info">
+                    <h3>Reliability Modeling</h3>
+                    <p>RBD (Reliability Block Diagrams) and Fault Tree Analysis simulations.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>FMECA</h3>
-                <p>Failure Mode, Effects, and Criticality Analysis to mitigate risks.</p>
+                <img src="https://placehold.co/400x200?text=FMECA" class="service-img" alt="FMECA">
+                <div class="service-info">
+                    <h3>FMECA</h3>
+                    <p>Failure Mode, Effects, and Criticality Analysis for risk mitigation.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">📈</div>
-                <h3>Reliability Analysis</h3>
-                <p>Data-driven analysis to optimize maintenance and uptime.</p>
+                <img src="https://placehold.co/400x200?text=Reliability+Analysis" class="service-img" alt="Analysis">
+                <div class="service-info">
+                    <h3>Reliability Analysis</h3>
+                    <p>Data-driven lifecycle analysis for maintenance optimization.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>Safety Analyses</h3>
-                <p>Hazard Logs, Risk Assessment, and Safety Integrity Level (SIL) studies.</p>
+                <img src="https://placehold.co/400x200?text=Safety+Analyses" class="service-img" alt="Safety">
+                <div class="service-info">
+                    <h3>Safety Analyses</h3>
+                    <p>Hazard Logs, Risk Assessments, and SIL (Safety Integrity Level) studies.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">📝</div>
-                <h3>Safety Assessment</h3>
-                <p>Independent review and Safety Case preparation for compliance.</p>
+                <img src="https://placehold.co/400x200?text=Safety+Assessment" class="service-img" alt="Assessment">
+                <div class="service-info">
+                    <h3>Safety Assessment</h3>
+                    <p>Independent Safety Assessment (ISA) support and Safety Case preparation.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="exclusives">
-        <h2>Discover our future plans</h2>
-        <div class="future-plan-box">
-            <div class="future-text">
-                <p>As part of our growth strategy, SHINKA is preparing to enter the manufacturing sector. In future, we are going to research and design proprietary energy units aimed at decentralized power generation.</p>
-                <br>
-                <p>Our objective is to transition from service assurance to product creation, delivering innovative solutions that maximize energy utilization and cost-efficiency for our end-users.</p>
-            </div>
-            <div class="future-img">
-                [ Future Energy Unit Design ]
-            </div>
+        <h2 class="section-title">Discover our future plans</h2>
+        <div class="exclusive-content">
+            <p>As part of our growth strategy, SHINKA is preparing to enter the manufacturing sector. In future, we are going to research and design proprietary energy units aimed at decentralized power generation. Our objective is to transition from service assurance to product creation, delivering innovative solutions that maximize energy utilization and cost-efficiency for our end-users.</p>
         </div>
     </section>
 
     <section id="updates">
-        <h2>Latest Updates</h2>
-        <div class="updates-container">
+        <h2 class="section-title">Latest Updates</h2>
+        <div class="carousel-container">
             <div class="update-card">
-                <span class="date">Dec 2025</span>
-                <h3>SHINKA Official Launch</h3>
-                <p>Successfully registered SHINKA Rail Assurance Services LLP.</p>
+                <img src="https://placehold.co/300x150?text=Launch+Event" class="update-img" alt="Launch">
+                <div class="update-info">
+                    <h3>Company Launch</h3>
+                    <p>SHINKA Rail Assurance Services LLP is officially registered.</p>
+                </div>
             </div>
             <div class="update-card">
-                <span class="date">Upcoming</span>
-                <h3>ISO 9001 Certification</h3>
-                <p>Initiating process for Quality Management System certification.</p>
+                <img src="https://placehold.co/300x150?text=New+Project" class="update-img" alt="Project">
+                <div class="update-info">
+                    <h3>Metro Project Win</h3>
+                    <p>Awarded Reliability Modeling contract for new Metro Line.</p>
+                </div>
             </div>
             <div class="update-card">
-                <span class="date">Project Win</span>
-                <h3>Metro Rail Consultancy</h3>
-                <p>Awarded sub-contract for Reliability Modeling on new Metro line.</p>
+                <img src="https://placehold.co/300x150?text=Hiring" class="update-img" alt="Hiring">
+                <div class="update-info">
+                    <h3>We are Hiring</h3>
+                    <p>Looking for Junior RAMS Engineers to join our team.</p>
+                </div>
             </div>
-        </div>
+             </div>
     </section>
 
-    <section id="team">
-        <h2>SHINKA Foundations</h2>
+    <section id="foundations">
+        <h2 class="section-title">SHINKA Foundations</h2>
         <div class="team-grid">
             <div class="team-member">
-                <div class="member-photo"></div> <h3>[Name]</h3>
-                <p class="member-role">Founder</p>
-                <p>Visionary leader driving the evolution of rail safety.</p>
+                <img src="https://placehold.co/200x200?text=Founder" class="member-photo" alt="Founder">
+                <h3>[Name Here]</h3>
+                <p class="role">Founder</p>
+                <p>Visionary leader driving the evolution of safety.</p>
             </div>
             <div class="team-member">
-                <div class="member-photo"></div> <h3>[Name]</h3>
-                <p class="member-role">CEO</p>
-                <p>Steering global operations and strategic growth.</p>
+                <img src="https://placehold.co/200x200?text=CEO" class="member-photo" alt="CEO">
+                <h3>[Name Here]</h3>
+                <p class="role">CEO</p>
+                <p>Steering global operations and strategy.</p>
             </div>
             <div class="team-member">
-                <div class="member-photo"></div> <h3>[Name]</h3>
-                <p class="member-role">CTO</p>
+                <img src="https://placehold.co/200x200?text=CTO" class="member-photo" alt="CTO">
+                <h3>[Name Here]</h3>
+                <p class="role">CTO</p>
                 <p>Architecting the future of RAMS technology.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p style="text-align: center; margin-bottom: 20px;">Looking for services or a career? Reach out to us.</p>
-        
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="type">Inquiry Type</label>
-                <select id="type" name="type">
-                    <option value="Service Inquiry">Business / Service Inquiry</option>
-                    <option value="Job Application">Job Application</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message / Cover Letter</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="portfolio">Link to Resume/Portfolio (Google Drive/LinkedIn)</label>
-                <input type="text" id="portfolio" name="portfolio" placeholder="Paste link here">
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
-
     <footer>
         <div class="social-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">X (Twitter)</a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
         <p class="tagline">"Together let's build safer and dependable railway"</p>
-        <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2025 SHINKA Global Services and Production. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2025 SHINKA Global Services and Production.</p>
     </footer>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
 </body>
-
 </html>
