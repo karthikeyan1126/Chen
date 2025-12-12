@@ -21,7 +21,7 @@
         
         /* --- HEADER --- */
         header {
-            background: var(--black);
+            background: var(--white);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
@@ -87,7 +87,6 @@
             transition: transform 0.3s;
         }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .service-img { height: 180px; width: 100%; object-fit: cover; background: #ddd; }
         .service-info { padding: 20px; }
         .service-info h3 { color: var(--primary-navy); margin-bottom: 10px; }
         .btn-know-more {
@@ -102,7 +101,15 @@
             transition: background-color 0.3s;
         }
         .btn-know-more:hover { transform: translateY(-5px); background-color: --black; box-shadow: 0 10px 20px; }
-
+        .service-page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-item: center;
+        }
+        .service-text { text-align: left; }
+        .service-image img { border-radius: 8px; border-shadow: 0 5px 15px rgba(0,0,0,0.2) }
+        
         /* --- EXCLUSIVES (Future Plans) --- */
         #exclusives { background: var(--light-gray); color: var(--black); text-align: center; }
         #exclusives .section-title { color: var(--black); }
@@ -214,15 +221,18 @@
         <h2 class="section-title">Services by SHINKA</h2>
         <div class="services-grid">
             <div class="service-card">
-                <img src="https://relyence.co.uk/wp-content/uploads/reliability_prediction_calculation_properties-960x721.jpg" class="service-img" alt="Prediction">
                 <div class="service-info">
                     <h3>Reliability Prediction</h3>
                     <p>MTBF calculations using MIL-HDBK-217 & Telcordia standards in the advance reliability software tool.</p>
                 </div>
-                <div class="btn-know-more">
-                    <h3>Reliability Prediction</h3>
-                    <p>Our reliability services focus on ensuring that rail systems and products perform consistently over their intended lifecycle. We conduct reliability analysis, prediction, and modeling to identify potential weaknesses early, improve design robustness, and reduce downtime. By applying internationally recognized standards and proven methodologies, we help our clients deliver rail solutions that are dependable, cost-efficient, and built for long-term operational excellence.</p>
-                </div>
+                <h2 class="btn-know-more">Know More</h2>
+                <div class="service-page">
+                    <div class="service-image">
+                        <img src="https://relyence.co.uk/wp-content/uploads/reliability_prediction_calculation_properties-960x721.jpg">
+                    </div>
+                    <div class="serice-text">
+                        <p>Our reliability services focus on ensuring that rail systems and products perform consistently over their intended lifecycle. We conduct reliability analysis, prediction, and modeling to identify potential weaknesses early, improve design robustness, and reduce downtime. By applying internationally recognized standards and proven methodologies, we help our clients deliver rail solutions that are dependable, cost-efficient, and built for long-term operational excellence.</p>
+                    </div>  
             </div>
             <div class="service-card">
                 <img src="https://www.itemsoft.com/assets/screens/rbd_md_1.jpg" class="service-img" alt="Modeling">
@@ -354,6 +364,7 @@
 </body>
 
 </html>
+
 
 
 
