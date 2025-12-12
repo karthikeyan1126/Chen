@@ -23,18 +23,18 @@
         header {
             background: var(--primary-navy);
             padding: 15px 5%;
-            display: flex;
+            display: float;
             justify-content: space-between;
             align-items: left;
             position: sticky;
-            top: 50;
+            top: 150;
             z-index: 1000;
         }
         .logo-container img {
             height: 70px; /* Adjust height based on your logo */
             width: 70px;
         }
-        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul { list-style: none; display: float; alignment: center; gap: 20px; }
         nav a { color: var(--white); text-decoration: none; transition: 0.3s; }
         nav a:hover { transform: translateY(-5px); color: var(--purple); }
 
@@ -90,7 +90,7 @@
         .service-img { height: 180px; width: 100%; object-fit: cover; background: #ddd; }
         .service-info { padding: 20px; }
         .service-info h3 { color: var(--primary-navy); margin-bottom: 10px; }
-        .btn-know-more {
+        .service-link {
             display: inline-block;
             padding: 10px 20px;
             background-colour: #6a5acd;
@@ -101,7 +101,7 @@
             font-size: 14px;
             transition: background-color 0.3s;
         }
-        .btn-know-more:hover { transform: translateY(-5px); background-color: --black; box-shadow: 0 10px 20px; }
+        .service-link:hover { transform: translateY(-5px); background-color: --black; box-shadow: 0 10px 20px; }
 
         /* --- EXCLUSIVES (Future Plans) --- */
         #exclusives { background: var(--light-gray); color: var(--black); text-align: center; }
@@ -330,6 +330,7 @@
 </body>
 
 </html>
+
 
 
 
