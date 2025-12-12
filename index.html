@@ -27,7 +27,7 @@
             justify-content: space-between;
             align-items: left;
             position: sticky;
-            top: 0;
+            top: 10;
             z-index: 1000;
         }
         .logo-container img {
@@ -40,7 +40,7 @@
 
         /* --- HOME HERO SECTION --- */
         #home {
-            background: url('https://www.shutterstock.com/image-photo/highspeed-train-running-on-railway-600nw-2304696697.jpg');
+            background: url('https://www.shutterstock.com/shutterstock/videos/3639877547/thumb/7.jpg?ip=x480');
             background-size: cover;
             background-position: center;
             height: 90vh;
@@ -52,7 +52,7 @@
             color: var(--white);
         }
         #home h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
-        #home h2 { font-size: 1.3rem; color: var(--black); font-weight: 400; }
+        #home h2 { font-size: 1.3rem; color: var(--white); font-weight: 400; }
 
         /* --- GENERAL SECTION STYLES --- */
         section { padding: 60px 10%; }
@@ -78,13 +78,23 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+            gap: 150px;
         }
         .service-card {
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s;
+        }
+        .service-card-know-more {
+            .split-layout {
+                display: grid;
+                grid-template-column: 1fr 1fr;
+                gap: 50px;
+                align-items: center;
+            }
+            .about-text { text-align: left; }
+            .about-image img { border-radius: 8px; box-shadow: 0 }
         }
         .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .service-img { height: 180px; width: 100%; object-fit: cover; background: #ddd; }
@@ -318,6 +328,7 @@
 </body>
 
 </html>
+
 
 
 
