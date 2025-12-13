@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHINKA - Global Services and Production</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /*--- CSS VARIABLE & RESETS ---*/
+    :root {
+      --primary-navy: #0a192f;
+      --purple: #6a5acd;
+      --light-gray: #f4f4f4;
+      --white: #ffffff;
+      --black: #000000;
+      --text-dark: #333;
+    }
+
+    /* --- HEADER --- */
+    header {
+      background: var(--primary-navy);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-item: left;
+      position: sticky;
+      top: 150;
+      z-index: 1000;
+    }
+    .logo-container img {
+      height: 70px;
+      width: 70px;
+    }
+    nav ul { list-style: none; display: flex; align-items: center; gap: 20px; }
+    nav a { color: var(--white); text-decoration: none; transition: 0.3s; }
+    nav a:hover { transform: translateY(-5px); color: var(--purple); }
+
+    /* --- SERVICE SECTION STYLE --- */
+    section { padding: 60px 10%; }
+    .service-section { font-size: 2rem; margin-bottom: 10px; color: var(--black); align-text: center; }
+    .service-sub-section { font-size: 1rem; color: var(--black); align-text: center; }
+
+    /* --- SERVICE PAGE */
+    #service { background: var(--white); }
+    .service-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-text: left;
+    }
+    .service-image img { border-radius: 8px; border-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .service-text { text-align: left; color: var(--black); }
+  </style>
+</head>
+</body>
+
+  <header>
+    <div class="logo-container">
+      <img src="log.png.png">
+    </div>
+    <nav>
+      <u1>
+        <li>a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#updates">News</a></li>
+        <li><a href="#foundations">Team</a></li>
+      </u1>
+    </nav>
+  </header>
+
+  <section id="service">
+    <h2 class="service-section">Service</h2>
+    <div class="service-page">
+      <h3 class="service-sub-section">Reilaibility Prediction</h3>
+      <div class="service-image">
+        <img src="https://relyence.co.uk/wp-content/uploads/reliability_prediction_calculation_properties-960x721.jpg">
+      </div>
+      <div class="service-text">
+        <p>Our reliability services focus on ensuring that rail systems and products perform consistently over their intended lifecycle. We conduct reliability analysis, prediction, and modeling to identify potential weaknesses early, improve design robustness, and reduce downtime. By applying internationally recognized standards and proven methodologies, we help our clients deliver rail solutions that are dependable, cost-efficient, and built for long-term operational excellence.</p>
+      </div>
+    </div>
+  </section>
+</body>
+  
+</html>
+    
