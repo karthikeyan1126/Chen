@@ -13,7 +13,7 @@
             --light-gray: #f4f4f4;
             --white: #ffffff;
             --black: #000000;
-            --green: #8FC949;
+            --yellow: #FFDC9E;
             --text-dark: #333;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -35,8 +35,8 @@
             height: 70px; /* Adjust height based on your logo */
             width: 70px;
         }
-        nav ul { list-style: none; display: flex; align-items: center; gap: 30px; }
-        nav a { color: var(--black); text-decoration: none; transition: 0.3s; margin-bottom: 30px; margin-top: 30px; gap: 30px; }
+        nav ul { list-style: none; display: flex; align-items: center; gap: 20px; }
+        nav a { color: var(--black); text-decoration: none; transition: 0.3s; margin-bottom: 30px; margin-top: 60px; gap: 20px; }
         nav a:hover { transform: translateY(-2px); color: var(--blue); }
 
         /* --- HOME HERO SECTION --- */
@@ -94,7 +94,7 @@
         .btn-know-more {
             display: inline-block;
             padding: 5px 5px;
-            background: var(--green);
+            background: var(--yellow);
             color: var(--black);
             text-decoration: none;
             border-radius: 1px;
@@ -103,7 +103,7 @@
             margin-bottom: 2px;
             transition: background-color 0.3s;
         }
-        .btn-know-more:hover { transform: translateY(-2px); background: var(--green); color: var(--white); box-shadow: 0 10px 20px; }
+        .btn-know-more:hover { transform: translateY(-2px); background: var(--white); color: var(--black); box-shadow: 0 10px 20px; }
         
         /* --- EXCLUSIVES (Future Plans) --- */
         #exclusives { background: var(--light-gray); color: var(--black); text-align: center; }
@@ -148,7 +148,7 @@
         }
         .member-photo:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .name { color: var(--black); font-weight: none; margin-bottom: 5px; }
-        .role { color: var(--green); font-weight: bold; margin-bottom: 5px; }
+        .role { color: var(--yellow); font-weight: bold; margin-bottom: 5px; }
 
         /* --- CONTACT US --- */
         #contact { background: var(--white); }
@@ -159,34 +159,34 @@
         }
         .btn-know-more {
             display: inline-block;
-            padding: 5px 5px;
-            background: var(--green);
+            padding: 7px 7px;
+            background: var(--yellow);
             color: var(--black);
             text-decoration: none;
-            block-align: center;
+            inline-block-align: center;
             border-radius: 1px;
             font-weight: 150;
-            font-size: 14px;
-            margin-bottom: 2px;
-            transition: background-color 0.3s;
+            font-size: 18px;
+            margin-bottom: 1px;
+            transition: background-color 0.5s;
         }
-        .btn-know-more:hover { transform: translateY(-2px); background: var(--green); color: var(--white); box-shadow: 0 10px 20px; }
+        .btn-know-more:hover { transform: translateY(-2px); background: var(--white); color: var(--black); box-shadow: 0 10px 20px; }
             
 
         /* --- FOOTER --- */
         footer { background: var(--black); border: 2px solid var(--light-gray); text-align: center; padding: 40px 10%; }
         .social-links { margin-bottom: 20px; }
         .social-links a { color: var(--white); font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
-        .social-links a:hover { transform: translateY(-5px); color: var(--purple); }
+        .social-links a:hover { transform: translateY(-5px); color: var(--blue); }
         .tagline { color: var(--white); font-style: italic; font-size: 1.1rem; }
 
         /* --- MOBILE RESPONSIVE --- */
-        @media (max-width: 768px) {
+        @media (max-width: 762px) {
             .split-layout { grid-template-columns: 1fr; text-align: center; }
             .about-text, .experts-text { text-align: center; }
             .about-image { order: -1; margin-bottom: 20px; } /* Image on top for mobile */
-            #home { padding-left: 5%; align-items: center; text-align: center; }
-            nav ul { display: none; } /* Hide menu on mobile for simplicity */
+            #home { padding-left: 1%; align-items: center; text-align: center; }
+            nav ul { display: menu; } /* Menu on mobile for simplicity */
         }
     </style>
 </head>
@@ -363,6 +363,7 @@
 </body>
 
 </html>
+
 
 
 
