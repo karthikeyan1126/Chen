@@ -68,7 +68,21 @@
             color: var(--white);
             z-index: 1; /* puts text on top of video */
             text-shadow: 0 2px 4px rgba(0,0,0,0.7); /* adds shadow for readability */
-        }           
+        }
+        .btn-know-more {
+            display: inline-block;
+            padding: 5px 5px;
+            background-transperancy: 100%;
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 85%;
+            font-weight: 60;    
+            font-size: 2rem;
+            margin-top: 10px;
+            transition: transform 1s;
+        }
+        .btn-know-more:hover { transform: translateX(-10px); background: var(--white); color: var(--primary-navy); box-shadow: 0 10px 20px; }
+            
         #home h1 { font-size: 3rem; margin-bottom: 5px; text-transform: uppercase; margin-top: 280px; }
         #home h2 { font-size: 1.3rem; color: var(--white); font-weight: 400; }
 
@@ -242,6 +256,7 @@
                 <div class="hero-content">
                     <h1>SHINKA - GLOBAL SERVICES AND PRODUCTION</h1>
                     <h2>Evolving Safety. Ensuring Value</h2>
+                    <a href=#updates" class="btn-know-more">Explore more &rarr </a>
                 </div>
         </div>           
     </section>
@@ -397,6 +412,7 @@
 </body>
 
 </html>
+
 
 
 
