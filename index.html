@@ -63,7 +63,7 @@
         }
         .hero-content {
             text-align: left;
-            padding-left: 8%;
+            padding-left: 4%;
             color: var(--white);
             z-index: 1; /* puts text on top of video */
             text-shadow: 0 2px 4px rgba(0,0,0,0.7); /* adds shadow for readability */
@@ -125,9 +125,9 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 4s;
+            transition: transform 1s;
         }
-        .service-card:hover { transform: skew(30deg 10deg); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-card:hover { transform: translateY(-6px); background: var(--primary-navy); color: var(--white); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .service-info { padding: 20px; }
         .service-info h3 { color: var(--primary-navy); margin-bottom: 10px; }
         .btn-read-more {
@@ -411,7 +411,7 @@
             <a href="https://www.facebook.com/profile.php?id=61585171611916"><i class="fab fa-facebook"></i></a>
             <a href="https://x.com/ShinkaRail"><i class="fab fa-x"></i></a>
         </div>
-        <p>+91 6385403397 info@shinka.com</p>
+        <p style="margin-bottom: 10px; colo: var(--white); ">+91 6385403397 info@shinka.com</p>
         <p class="tagline">"Together let's build safer and dependable railway"</p>
         <p style="font-size: 0.8rem; margin-top: 20px; color: var(--white); ">&copy; 2025 SHINKA Global Services and Production.</p>
     </footer>
@@ -419,6 +419,7 @@
 </body>
 
 </html>
+
 
 
 
