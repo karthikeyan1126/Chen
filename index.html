@@ -36,15 +36,15 @@
             height: 80px; /* Adjust height based on your logo */
             width: 80px;
         }
-        nav ul { list-style: none; display: flex; align-items: center; gap: 20px; margin-top: 20px; }
-        nav a { color: var(--black); text-decoration: none; transition: 0.5s; gap: 20px; }
+        nav ul { list-style: none; display: flex; align-items: center; gap: 20px; margin-top: 10px; }
+        nav a { color: var(--black); text-decoration: none; transition: 0.5s; }
         nav a:hover { transform: translateY(-7px); color: var(--blue); }
 
         /* --- HOME HERO SECTION --- */
         #home { display: flex; }
         .hero-video-container {
             position: relative;
-            max-width: 2880px;
+            max-width: 100%;
             height: 100vh; /* Full screen height */
             overflow: hidden;
             display: flex;
@@ -127,7 +127,7 @@
             overflow: hidden;
             transition: transform 4s;
         }
-        .service-card:hover { transform: rotateY(360deg); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-card:hover { transform: skew(30deg 10deg); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         .service-info { padding: 20px; }
         .service-info h3 { color: var(--primary-navy); margin-bottom: 10px; }
         .btn-read-more {
@@ -419,6 +419,7 @@
 </body>
 
 </html>
+
 
 
 
