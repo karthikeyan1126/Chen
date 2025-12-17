@@ -191,7 +191,20 @@
         }
         .member-photo:hover { transform: rotateY(360deg); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .name { color: var(--black); font-weight: none; margin-bottom: 5px; }
-        .role { color: var(--green); font-weight: bold; margin-bottom: 5px; }
+        .btn-role { 
+            display: inline-block;
+            padding: 2.5px 2.5px;
+            background-color: transparent;
+            color: var(--green);
+            text-decoration: none; 
+            border: 0px;
+            font-size: 14px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            transition: transform 1s;
+            font-weight: bold;
+        }
+        .btn-role:hover { transform: translateY(6px); }
 
         /* --- CONTACT US --- */
         #contact { background: var(--white); align-item: center; }
@@ -379,19 +392,19 @@
             <div class="team-member">
                 <img src="https://placehold.co/200x200?text=Founder" class="member-photo" alt="Founder">
                 <h3>Mr. Aachari</h3>
-                <p class="role">Founder</p>
+                <a href="founder-role.html" class="btn-role">Founder</a>
                 <p>Visionary leader driving the evolution of SHINKA family</p>
             </div>
             <div class="team-member">
                 <img src="https://placehold.co/200x200?text=CEO" class="member-photo" alt="CEO">
                 <h3>Ms. Sri</h3>
-                <p class="role">CEO/Head of Operation</p>
+                <a href="CEO-role.html" class="btn-role">CEO/Head of Operation</a>
                 <p>Steering global operations and strategy to fulfill individuals in SHINKA</p>
             </div>
             <div class="team-member">
                 <img src="https://placehold.co/200x200?text=CTO" class="member-photo" alt="CTO">
                 <h3>Mr. Keyan </h3>
-                <p class="role">CTO/Senior Engineer</p>
+                <a href="CTO-role.html" class="btn-role">CTO/Senior Engineer</a>
                 <p>Architecting the future in RAMS Engineering and Power production</p>
             </div>
         </div>
@@ -420,6 +433,7 @@
 </body>
 
 </html>
+
 
 
 
