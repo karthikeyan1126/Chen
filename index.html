@@ -159,15 +159,18 @@
             gap: 20px;
             padding-bottom: 20px;
         }
-        .update-card {
-            min-width: 300px;
-            background: var(--white);
-            border-radius: 8px;
+        .btn-update-card {
+            max-width: 300px;
+            height: 300px;
+            background: var(--light-gray);
+            border: 0px;
+            border-radius: 0px;
             scroll-snap-align: center;
             transition: transform 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow-x: hidden;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.1);
         }
-        .update-card:hover { transform: translateY(-5px); }
+        .btn-update-card:hover { transform: translateY(-5px); }
         .update-img { height: 150px; width: 100%; background: #ccc; object-fit: cover; border-top-left-radius: 8px; border-top-right-radius: 8px;}
         .update-info { padding: 15px; }
 
@@ -204,7 +207,7 @@
             transition: transform 1s;
             font-weight: bold;
         }
-        .btn-role:hover { transform: translateY(6px); }
+        .btn-role:hover { transform: translateY(-5px); }
 
         /* --- CONTACT US --- */
         #contact { background: var(--white); align-item: center; }
@@ -362,28 +365,10 @@
     <section id="updates">
         <h2 class="section-title">Latest Updates</h2>
         <div class="carousel-container">
-            <div class="update-card">
-                <img src="https://placehold.co/300x150?text=Launch+Event" class="update-img" alt="Launch">
-                <div class="update-info">
-                    <h3>Company Launch</h3>
-                    <p>SHINKA Rail Assurance Services LLP is officially registered.</p>
-                </div>
-            </div>
-            <div class="update-card">
-                <img src="https://placehold.co/300x150?text=New+Project" class="update-img" alt="Project">
-                <div class="update-info">
-                    <h3>Metro Project Win</h3>
-                    <p>Awarded Reliability Modeling contract for new Metro Line.</p>
-                </div>
-            </div>
-            <div class="update-card">
-                <img src="https://placehold.co/300x150?text=Hiring" class="update-img" alt="Hiring">
-                <div class="update-info">
-                    <h3>We are Hiring</h3>
-                    <p>Looking for Junior RAMS Engineers to join our team.</p>
-                </div>
-            </div>
-             </div>
+            <a href="news 1.html" class="btn-update-card"><img src="https://placehold.co/300x150?text=Launch+Event" class="update-img" alt="Launch"><h3>Company Launch</h3><p>SHINKA Rail Assurance Services LLP is officially registered.</p></a>
+            <a href="news 2.html" class="btn-update-card"><img src="https://placehold.co/300x150?text=New+Project" class="update-img" alt="Project"><h3>Metro Project Win</h3><p>Awarded Reliability Modeling contract for new Metro Line.</p></a>
+            <a href="new 3.html" class="btn-update-card"><img src="https://placehold.co/300x150?text=Hiring" class="update-img" alt="Hiring"><h3>We are Hiring</h3><p>Looking for Junior RAMS Engineers to join our team.</p></a>
+        </div>
     </section>
 
     <section id="foundations">
@@ -433,6 +418,7 @@
 </body>
 
 </html>
+
 
 
 
