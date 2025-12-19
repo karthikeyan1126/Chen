@@ -37,8 +37,8 @@
             width: 80px;
         }
         nav ul { list-style: none; display: flex; align-items: center; gap: 15px; margin-top: 15px; }
-        nav a { color: var(--black); text-decoration: none; transition: 0.5s; }
-        nav a:hover { transform: translateY(-7px); color: var(--blue); }
+        nav a { color: var(--black); text-decoration: none; transition: transform 0.5s; }
+        nav a:hover { transform: translateY(-7px); color: var(--blue); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         /* --- HOME HERO SECTION --- */
         #home { display: flex; }
@@ -90,7 +90,7 @@
 
         /* --- GENERAL SECTION STYLES --- */
         section { padding: 60px 10%; }
-        .section-title { text-align: center; font-size: 2rem; color: var(--primary-navy); margin-bottom: 40px; transition: transform 0.3s}
+        .section-title { text-align: center; font-size: 2rem; color: var(--primary-navy); margin-bottom: 40px; transition: transform 0.3s; }
         .section title:hover { transform: translateY(-5px); }
         
         /* --- ABOUT US (Split Layout) --- */
@@ -102,13 +102,13 @@
             align-items: center;
         }
         .about-text { text-align: left; padding-left: -5%; } /* left Alignment */
-        .about-image img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 3s}
+        .about-image img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 2s; }
         .about-image:hover { transform: rotateY(360deg); }
 
         /* --- EXPERTS (Split Layout Reversed) --- */
         #experts { background: var(--light-gray); }
         .experts-text { text-align: left; } /* Left Alignment */
-        .expert-image img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 3s }
+        .expert-image img { border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 2s; }
         .expert-image:hover { transform: rotateY(360deg); }
         
         /* --- SERVICES (Cards with Images) --- */
@@ -188,10 +188,10 @@
             object-fit: cover;
             margin: 0 auto 15px;
             border: 2px solid var(--light-gray);
-            transition: transform 4s;
+            transition: transform 0.5s;
             background: #eee;
         }
-        .member-photo:hover { transform: rotateY(360deg); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .member-photo:hover { transform: skewY(-25deg); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
         .name { color: var(--black); font-weight: none; margin-bottom: 5px; }
         .btn-role { 
             display: inline-block;
@@ -435,6 +435,7 @@
 </body>
 
 </html>
+
 
 
 
