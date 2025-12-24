@@ -55,12 +55,14 @@
       gap: 50px;
       align-text: center;
     }
-    .carousel-container {
+    .carousel-column {
       display: flex;
+      width: 100%;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }      
-    .founder-images img { object-fit: cover; border-radius: 8px; border-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .founder-images img { border-radius: 8px; border-shadow: 0 5px 15px rgba(0,0,0,0.2); }
     .responsibility-text { text-align: left; color: var(--black); }
 
     /* --- footer area --- */
@@ -93,14 +95,14 @@
     <div class="foundation-header">
       <h2 class="foundation-section">Founder</h2>
       <div class="foundation-page">
-        <div class="responsibility-text">
-          <p>Reliability Prediction is the cornerstone of any RAMS (Reliability, Availability, Maintainability, and Safety) program. It is a quantitative assessment performed during the design phase to estimate the Mean Time Between Failures (MTBF) and the expected failure rate ($\lambda$) of your system. This analysis allows us to verify if a proposed design meets its reliability targets before a single prototype is built.</p>
-        </div>
-        <div class="carousel-container">
+        <div class="carousel-column">
           <div class="founder-images">
             <img src="our mission.png">
             <img src="partners.png">
           </div>
+        </div>
+        <div class="responsibility-text">
+          <p>Reliability Prediction is the cornerstone of any RAMS (Reliability, Availability, Maintainability, and Safety) program. It is a quantitative assessment performed during the design phase to estimate the Mean Time Between Failures (MTBF) and the expected failure rate ($\lambda$) of your system. This analysis allows us to verify if a proposed design meets its reliability targets before a single prototype is built.</p>
         </div>
       </div>
     </div>
@@ -118,4 +120,5 @@
 </body>
 </html>
     
+
 
