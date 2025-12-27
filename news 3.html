@@ -3,85 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHINKA - Global Services and Production</title>
+  <title>News of SHINKA</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     /*--- CSS VARIABLE & RESETS ---*/
     :root {
       --primary-navy: #0a192f;
-      --purple: #6a5acd;
+      --blue: #2780F5;
       --light-gray: #f4f4f4;
       --white: #ffffff;
       --black: #000000;
+      --green: #27F579;
       --text-dark: #333;
     }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    
     /* --- HEADER --- */
     header {
-      background: var(--primary-navy);
+      position: relative;
+      background: var(--light-gray);
       padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-item: left;
-      position: sticky;
-      top: 150;
+      margin-top: 0px;
+      margin-bottom: 2px;
       z-index: 1000;
     }
     .logo-container img {
-      height: 70px;
-      width: 70px;
+      height: 80px;
+      width: 80px;
     }
-    nav ul { list-style: none; display: flex; align-items: center; gap: 20px; }
-    nav a { color: var(--white); text-decoration: none; transition: 0.3s; }
-    nav a:hover { transform: translateY(-5px); color: var(--purple); }
+    nav ul { list-style: none; display: flex; align-items: center; gap: 15px; margin-top: 15px; }
+    nav a { color: var(--black); text-decoration: none; transition: 0.5s; }
+    nav a:hover { transform: translateY(-7px); color: var(--blue); }
 
     /* --- SERVICE SECTION STYLE --- */
     section { padding: 60px 10%; }
-    .service-section { font-size: 2rem; margin-bottom: 10px; color: var(--black); align-text: center; }
-    .service-sub-section { font-size: 1rem; color: var(--black); align-text: center; }
+    .news-section { font-size: 2rem; margin-bottom: 10px; color: var(--white); align-text: center; }
+    .news-sub-section { font-size: 1rem; color: var(--white); align-text: center; }
 
     /* --- SERVICE PAGE */
-    #service { background: var(--white); }
-    .service-page {
+    #news { background: var(--black); }
+    .news-header {
+      align-text: center;
+    }
+    .news-page {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
-      align-text: left;
+      align-text: center;
     }
-    .service-image img { border-radius: 8px; border-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-    .service-text { text-align: left; color: var(--black); }
+    .news-image img { border-radius: 8px; border-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .news-text { text-align: left; color: var(--white); }
+
+    /* --- footer area --- */
+    footer { background: var(--white); border: 2px solid var(--light-gray); text-align: center; padding: 40px 10%; margin-top: 2px; margin-bottom: 0px; }
+    .social-links { margin-bottom: 20px; }
+    .social-links a { color: var(--black); font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
+    .social-links a:hover { transform: translateY(-5px); color: var(--blue); }
+    .tagline { color: var(--black); font-style: italic; font-size: 1.1rem; }
+    
   </style>
 </head>
 </body>
 
   <header>
     <div class="logo-container">
-      <img src="log.png.png">
+      <a href="index.html#home" class="logo-container"><img src="logo.png.png"></a>
     </div>
     <nav>
       <u1>
-        <li>a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#updates">News</a></li>
-        <li><a href="#foundations">Team</a></li>
+        <a href="index.html#home" class="header">Home</a>
+        <a href="index.html#about" class="header">About Us</a>
+        <a href="index.html#services" class="header">Services</a>
+        <a href="index.html#updates" class="header">News</a>
+        <a href="index.html#contact" class="header">Contact Us</a>
       </u1>
     </nav>
   </header>
 
-  <section id="service">
-    <h2 class="service-section">Service</h2>
-    <div class="service-page">
-      <h3 class="service-sub-section">Reilaibility Prediction</h3>
-      <div class="service-image">
-        <img src="https://relyence.co.uk/wp-content/uploads/reliability_prediction_calculation_properties-960x721.jpg">
-      </div>
-      <div class="service-text">
-        <p>Our reliability services focus on ensuring that rail systems and products perform consistently over their intended lifecycle. We conduct reliability analysis, prediction, and modeling to identify potential weaknesses early, improve design robustness, and reduce downtime. By applying internationally recognized standards and proven methodologies, we help our clients deliver rail solutions that are dependable, cost-efficient, and built for long-term operational excellence.</p>
+  <section id="news">
+    <div class="news-header">
+      <h2 class="news-section">News</h2>
+      <div class="news-page">
+        <div class="news-text">
+          <h3 class="news-sub-section">Hiring for the new project</h3>
+          <p>SHINKA is open to welcome new young mines to our valuable team, looking forward for the application submit by the people through contact us forms in the contac page. Expecting to see you all in the interview panel.</p>
+        </div>
+        <div class="news-image">
+          <img src=" " alt="certificate">
+        </div>
       </div>
     </div>
   </section>
+  <footer>
+        <div class="social-links">
+            <a href="http://www.linkedin.com/company/shinka-rail-services-llp"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61585171611916"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/ShinkaRail"><i class="fab fa-x"></i></a>
+        </div>
+        <p class="tagline">"Together let's build safer and dependable railway"</p>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: var(--black); ">&copy; 2025 SHINKA Global Services and Production.</p>
+    </footer>
 </body>
-  
 </html>
     
+
+
+
+
