@@ -13,6 +13,8 @@
       --light-gray: #f4f4f4;
       --white: #ffffff;
       --black: #000000;
+      --light-green: #59FF85;
+      --light-purple: #8559FF;
       --green: #27F579;
       --text-dark: #333;
     }
@@ -42,10 +44,10 @@
 
     /* --- SERVICE SECTION STYLE --- */
     section { padding: 60px 10%; }
-    .foundation-section { font-size: 1.5rem; margin-bottom: 10px; color: var(--black); align-text: center; }
+    .foundation-section { font-size: 1.5rem; margin-bottom: 10px; color: var(--white); align-text: center; }
 
-    /* --- SERVICE PAGE */
-    #foundation { background: var(--white); }
+    /* --- FOUNDATION PAGE */
+    #foundation { background: var(--light-purple); }
     .foundation-header {
       align-text: center;
     }
@@ -67,10 +69,18 @@
       scroll-behavior: smooth;
       object-fit: cover;
     }
-    .responsibility-text { text-align: left; color: var(--black); }
-
+    .responsibility-text { text-align: left; color: var(--white); margin-top: 10px; }
+    .responsibility-clean-list {
+      padding-left: 20px;
+    }
+    .clean-list li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      padding-left: 10px;
+    }
+    
     /* --- footer area --- */
-    footer { background: var(--black); border: 2px solid var(--light-gray); text-align: center; padding: 40px 10%; margin-top: 20px; margin-bottom: 0px; }
+    footer { background: var(--black); border: 2px solid var(--light-gray); text-align: center; padding: 40px 10%; margin-top: 0px; margin-bottom: 0px; }
     .social-links { margin-bottom: 20px; }
     .social-links a { color: var(--white); font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
     .social-links a:hover { transform: translateY(-5px); color: var(--blue); }
@@ -104,7 +114,14 @@
           <img src="partners.png">
         </div>
         <div class="responsibility-text">
-          <p>Reliability Prediction is the cornerstone of any RAMS (Reliability, Availability, Maintainability, and Safety) program. It is a quantitative assessment performed during the design phase to estimate the Mean Time Between Failures (MTBF) and the expected failure rate ($\lambda$) of your system. This analysis allows us to verify if a proposed design meets its reliability targets before a single prototype is built.</p>
+          <p>A CTO in an LLP leads the firm’s technology vision, systems, and security to support business goals.</p>
+          <l>CTO responsibilities in our SHINKA:</l>
+          <ol class="responsibility-clean-list">
+            <li>Define and drive the LLP’s technology strategy in line with business objectives.</li>
+            <li>Oversee software, IT systems, and technical infrastructure for reliability and scalability.</li>
+            <li>Lead and mentor the technology team, promoting innovation and best practices.</li>
+            <li>Evaluate and implement new technologies that enhance services and productions.</li>
+          </ol>
         </div>
       </div>
     </div>
@@ -122,6 +139,19 @@
 </body>
 </html>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
