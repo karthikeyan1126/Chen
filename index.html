@@ -129,8 +129,8 @@
             overflow: hidden;
             transition: transform 0.5s;
         }
-        .service-info h2 { padding-left: 20px; color: var(--primary-navy); }
-        .service-info h3 { padding-left: 20px; color: var(--primary-navy); margin-bottom: 10px; }
+        .service-info { padding-left: 20px; color: var(--primary-navy); }
+        .service-info h3 { padding-left: 20px; color: var(--primary-navy); margin-bottom: 10px; margin-top: 20px; }
         .btn-read-more {
             display: inline-block;
             padding: 2.5px 2.5px;
@@ -145,7 +145,9 @@
             transition: transform 1s;
         }
         .service-card:hover { transform: translateY(-12px); background: var(--primary-navy); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .service-card:hover h2,
+        .service-card:hover .service-info {
+            color: var(--white);
+        }
         .service-card:hover h3,
         .service-card:hover .btn-read-more {
             color: var(--white);
@@ -318,42 +320,42 @@
         <h2 class="section-title">Services by SHINKA</h2>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-info h2">
+                <div class="service-info">
                     <h3>Reliability Prediction</h3>
                     <p>MTBF calculations using MIL-HDBK-217 & Telcordia standards in the advance reliability software tool.</p>
                     <a href="service 1.html" class="btn-read-more">Read more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-info h2">
+                <div class="service-info">
                     <h3>Reliability Modeling</h3>
                     <p>Utilizing advanced software tool to model the RBD (Reliability Block Diagrams) in simulations format to calculate the system reliability.</p>
                     <a href="service 2.html" class="btn-read-more">Read more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-info h2">
+                <div class="service-info">
                     <h3>Failure Mode Effect and Criticality Analysis</h3>
                     <p>In-depth failure inject studies using bottom-up approach to identify reliability and safety critical items from rail systems.</p>
                     <a href="service 3.html" class="btn-read-more">Read more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-info h2">
+                <div class="service-info">
                     <h3>Reliability Analysis</h3>
                     <p>Crafting essential reliability analysis to prove the reliability performance of rail systems.</p>
                     <a href="service 4.html" class="btn-read-more">Read more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-info h2">
+                <div class="service-info">
                     <h3>Comprehensive Safety Analyses</h3>
                     <p>Thorough analysis to identify possible hazards, Hazard Logs, Risk Assessments, and SIL studies to predict safety of the system.</p>
                     <a href="service 5.html" class="btn-read-more">Read more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-info h2">
+                <div class="service-info">
                     <h3>Safety Assessment</h3>
                     <p>Independent Safety Assessment (ISA) support and Safety Case preparation.</p>
                     <a href="service 6.html" class="btn-read-more">Read more &rarr; </a>
@@ -444,6 +446,7 @@
 </body>
 
 </html>
+
 
 
 
