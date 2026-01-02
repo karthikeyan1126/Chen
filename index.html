@@ -131,7 +131,15 @@
         }
         .service-info { padding-left: 20px; color: var(--primary-navy); }
         .service-info h3 { padding-left: 1px; color: var(--primary-navy); margin-bottom: 10px; margin-top: 20px; }
-        .btn-read-more {
+        .service-card:hover { transform: translateY(-12px); background: var(--primary-navy); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-card:hover .service-info {
+            color: var(--white);
+        }
+        .service-card:hover h3,
+        .service-card:hover .btn-know-more {
+            color: var(--white);
+        }
+        .btn-know-more {
             display: inline-block;
             padding: 2.5px 2.5px;
             background-color: transparent;
@@ -144,15 +152,7 @@
             margin-bottom: 10px;
             transition: transform 1s;
         }
-        .service-card:hover { transform: translateY(-12px); background: var(--primary-navy); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .service-card:hover .service-info {
-            color: var(--white);
-        }
-        .service-card:hover h3,
-        .service-card:hover .btn-read-more {
-            color: var(--white);
-        }
-        .btn-read-more:hover { transform: translateX(6px); border: 1px solid #ffffff; }
+        .btn-know-more:hover { transform: translateX(6px); border: 1px solid #ffffff; }
         
         /* --- EXCLUSIVES (Future Plans) --- */
         #exclusives { background: var(--light-gray); color: var(--black); text-align: center; }
@@ -168,7 +168,7 @@
             gap: 40px;
             padding-bottom: 20px;
         }
-        .btn-update-card {
+        .update-card {
             max-width: 320px;
             height: 290px;
             background: var(--light-gray);
@@ -178,9 +178,23 @@
             transition: transform 0.3s;
             box-shadow: 0 6px 8px rgba(0,0,0,0.1);
         }
-        .btn-update-card:hover { transform: translateY(-8px); }
+        .update-card:hover { transform: translateY(-8px); }
         .update-img { height: 150px; width: 100%; background: #ccc; object-fit: cover; border-top-left-radius: 8px; border-top-right-radius: 8px;}
         .update-info { padding: 15px; }
+        .btn-read-more {
+            display: inline-block;
+            padding: 2.5px 2.5px;
+            background-color: transparent;
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 40;    
+            font-size: 14px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+            transition: transform 1s;
+        }
+        .btn-read-more:hover { transform: translateX(6px); border: 1px solid #000000; }
 
         /* --- FOUNDATIONS (Team) --- */
         #foundations { background: var(--light-gray); }
@@ -225,8 +239,9 @@
             color: var(--white);
             margin-bottom: 20px;
         }
-        .btn-know-more {
+        .btn-contact-us {
             display: inline-block;
+            align-item: center;
             padding: 5px 5px;
             border: 1px solid #ffffff;
             background-color: transparent;
@@ -242,7 +257,7 @@
             margin-bottom: 10px;
             transition: transform 1s;
         }
-        .btn-know-more:hover { transform: translateY(-8px); background: var(--white); color: var(--black); font-style: bold; border: 1px solid #000000; box-shadow: 0 1px 2px; }
+        .btn-contact-us:hover { transform: translateY(-8px); background: var(--white); color: var(--black); font-style: bold; border: 1px solid #000000; box-shadow: 0 1px 2px; }
             
 
         /* --- FOOTER --- */
@@ -323,42 +338,42 @@
                 <div class="service-info">
                     <h3>Reliability Prediction</h3>
                     <p>MTBF calculations using MIL-HDBK-217 & Telcordia standards in the advance reliability software tool.</p>
-                    <a href="service 1.html" class="btn-read-more">Read more &rarr; </a>
+                    <a href="service 1.html" class="btn-know-more">Know more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
                 <div class="service-info">
                     <h3>Reliability Modeling</h3>
                     <p>Utilizing advanced software tool to model the RBD (Reliability Block Diagrams) in simulations format to calculate the system reliability.</p>
-                    <a href="service 2.html" class="btn-read-more">Read more &rarr; </a>
+                    <a href="service 2.html" class="btn-know-more">Know more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
                 <div class="service-info">
                     <h3>Failure Mode Effect and Criticality Analysis</h3>
                     <p>In-depth failure inject studies using bottom-up approach to identify reliability and safety critical items from rail systems.</p>
-                    <a href="service 3.html" class="btn-read-more">Read more &rarr; </a>
+                    <a href="service 3.html" class="btn-know-more">Know more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
                 <div class="service-info">
                     <h3>Reliability Analysis</h3>
                     <p>Crafting essential reliability analysis to prove the reliability performance of rail systems.</p>
-                    <a href="service 4.html" class="btn-read-more">Read more &rarr; </a>
+                    <a href="service 4.html" class="btn-know-more">Know more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
                 <div class="service-info">
                     <h3>Comprehensive Safety Analyses</h3>
                     <p>Thorough analysis to identify possible hazards, Hazard Logs, Risk Assessments, and SIL studies to predict safety of the system.</p>
-                    <a href="service 5.html" class="btn-read-more">Read more &rarr; </a>
+                    <a href="service 5.html" class="btn-know-more">Know more &rarr; </a>
                 </div>
             </div>
             <div class="service-card">
                 <div class="service-info">
                     <h3>Safety Assessment</h3>
                     <p>Independent Safety Assessment (ISA) support and Safety Case preparation.</p>
-                    <a href="service 6.html" class="btn-read-more">Read more &rarr; </a>
+                    <a href="service 6.html" class="btn-know-more">Know more &rarr; </a>
                 </div>
             </div>
         </div>
@@ -374,26 +389,29 @@
     <section id="updates">
         <h2 class="section-title">Latest Updates</h2>
         <div class="carousel-container">
-            <div class="btn-update-card">
-                <a href="news 1.html"><img src="https://placehold.co/300x150?text=Launching" class="update-img" alt="Launching"></a>
+            <div class="update-card">
+                <img src="https://placehold.co/300x150?text=Launching" class="update-img" alt="Launching">
                 <div class="update-info">
                     <h3>Company Launch</h3>
                     <p>SHINKA - Global Services and Production LLP is officially registered.</p>
                 </div>
+                <a href="news1.html" class="btn-read-more">Read More &rarr; </a>
             </div>
-            <div class="btn-update-card">
-                <a href="news 2.html"><img src="https://placehold.co/300x150?text=Under+Preparation" class="update-img" alt="Under Preparation"></a>
+            <div class="update-card">
+                <img src="https://placehold.co/300x150?text=Under+Preparation" class="update-img" alt="Under Preparation">
                 <div class="update-info">
                     <h3>Metro Project Win</h3>
                     <p>Awarded Reliability Modeling contract for new Metro Line.</p>
                 </div>
+                <a href="news2.html" class="btn-read-more">Read More &rarr; </a>
             </div>
-            <div class="btn-update-card">
-                <a href="news 3.html"><img src="https://placehold.co/300x150?text=Under+Preparation" class="update-img" alt="Under Preparation"></a>
+            <div class="update-card">
+                <img src="https://placehold.co/300x150?text=Under+Preparation" class="update-img" alt="Under Preparation">
                 <div class="update-info">
                     <h3>We are Hiring</h3>
                     <p>Looking for Junior RAMS Engineers to join our team.</p>
                 </div>
+                <a href="news3.html" class="btn-read-more">Read More &rarr; </a>
             </div>
         </div>
     </section>
@@ -426,7 +444,7 @@
         <div class="contact-us">
             <h3>We are here to assist you</h3>
         </div>
-        <a href="https://forms.gle/tFy3Rk6FWLQWZx2MA" class="btn-know-more">Drop us a line &darr; </a>
+        <a href="https://forms.gle/tFy3Rk6FWLQWZx2MA" class="btn-contact-us">Drop us a line &darr; </a>
         <p style="color: var(--white); ">One step a head to top</p>
         <p style="text-align: right; color: var(--white); margin-bottom: 10px; padding-right: 20px; ">info@shinka.com</p>
         <p style="text-align: right; color: var(--white); margin-bottom: 2px; padding-right: 20px; ">Feel free to contact us</p>
@@ -446,6 +464,7 @@
 </body>
 
 </html>
+
 
 
 
