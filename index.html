@@ -24,11 +24,11 @@
         img { max-width: 100%; display: block; }
         
         /* --- HEADER --- */
-        header {
+        #header { display: flex; }
+        .header {
             position: fixed;
             background: var(--light-grey);
             padding: 15px 5%;
-            display: flex;
             justify-content: space-between;
             align-items: left;
             margin-top: 0px;
@@ -39,7 +39,7 @@
             height: 50px;
             width: 50px;
         }
-        nav ul { list-style: none; display: flex; align-items: center; gap: 15px; margin-top: 15px; }
+        nav ul { list-style: none; display: flex; align-items: right; gap: 15px; margin-top: 15px; }
         nav a { color: var(--black); text-decoration: none; transition: transform 1s; }
         nav a:hover { transform: translateY(-6px); color: var(--blue); }
 
