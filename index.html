@@ -35,22 +35,9 @@
             margin-bottom: 2px;
             z-index: 1000;
         }
-        .text-logo {
-            font-size: 5rem;
-            font-weight: 600;
-            font-family: 'Greenth Grunge';
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            margin: 0;
-        }
-        .text-color1 {
-            color: var(--black);
-        }
-        .text-color2 {
-            color: var(--cherry-red);
-        }
-        .text-color3 {
-            color: var(--white);
+        .logo-container img {
+            height: 50px;
+            width: auto;
         }
         nav ul { list-style: none; display: flex; align-items: center; gap: 15px; margin-top: 15px; }
         nav a { color: var(--black); text-decoration: none; transition: transform 1s; }
@@ -294,31 +281,19 @@
 <body>
 
     <header>
-        <section id="header">
-            <div class="text-logo">
-                <div class="text-color1">
-                    <p>SHI</p>
-                    <div class="text-color2">
-                        <p>N</p>
-                        <div class="text-color3">
-                            <p>K</p>
-                            <div class="text-color1">
-                                <p>A</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#updates">News</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-        </section>
+        <div class="logo-container">
+            <img src="logo.png.png">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#updates">News</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </section>
     </header>
 
     <section id="home">
