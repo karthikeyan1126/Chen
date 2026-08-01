@@ -233,33 +233,30 @@
         .btn-role:hover { transform: translateY(-5px); }
 
         /* --- CONTACT US --- */
-        #contact { background: var(--primary-navy); align-item: center; }
-        .contact-us {
+        /* --- CONTACT ROW FLEXBOX --- */
+        #contact { background: var(--primary-navy); }
+        .contact-bottom-row {
             display: flex;
-            justify-content: center;
-            color: var(--white);
-            margin-bottom: 20px;
+            justify-content: space-between; /* Pushes children to opposite ends */
+            align-items: flex-end; /* Aligns them at the bottom so the text lines up neatly */
+            width: 100%;
+            padding: 0 5%; /* Adds a bit of breathing room on the edges */
+            margin-top: 30px;
         }
-        .btn-contact-us {
-            display: inline-block;
-            align-items: center;
-            padding: 5px 5px;
-            border: 1px solid #ffffff;
-            background-color: transparent;
-            color: var(--white);
-            padding-left: 0.5%;
-            padding-right: 0.2%;
-            text-decoration: none;
-            margin:0 auto;
-            border-radius: 25px;
-            font-style: bold;
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            transition: transform 1s;
+        .contact-left {
+            text-align: left;
         }
-        .btn-contact-us:hover { transform: translateY(-8px); color: var(--white); font-style: bold; border: 1px solid #ff2828; box-shadow: 0 1px 1px; }
-            
+        .contact-left p {
+            color: var(--white);
+            margin-top: 15px; /* Adds space between the button and the paragraph */
+        }
+        .contact-right {
+            text-align: right;
+            color: var(--white);
+        }
+        .contact-right p {
+            margin-bottom: 5px; /* Adds a little spacing between the two lines of text */
+        } 
 
         /* --- FOOTER --- */
         footer { background: var(--white); border: 2px solid var(--light-grey); text-align: center; padding: 40px 10%; margin-top: 2px; margin-bottom: 0px; }
@@ -445,10 +442,21 @@
         <div class="contact-us">
             <h3>We are here to assist you</h3>
         </div>
-        <a href="https://forms.gle/tFy3Rk6FWLQWZx2MA" class="btn-contact-us">Drop us a line &darr; </a>
-        <p style="color: var(--white); ">One step a head to top</p>
-        <p style="text-align: right; color: var(--white); margin-bottom: 10px; padding-right: 20px; ">info@shinka.com</p>
-        <p style="text-align: right; color: var(--white); margin-bottom: 2px; padding-right: 20px; ">Feel free to contact us</p>
+        <!-- New Flexbox Container -->
+        <div class="contact-bottom-row">
+        
+        <!-- Left Side -->
+        <div class="contact-left">
+            <a href="https://forms.gle/tFy3Rk6FWLQWZx2MA" class="btn-contact-us">Drop us a line &darr; </a>
+            <p>One step a head to top</p>
+        </div>
+
+        <!-- Right Side -->
+        <div class="contact-right">
+            <p>info@shinka.com</p>
+            <p>Feel free to contact us</p>
+        </div>
+        </div>
     </section>
 
     <footer>
