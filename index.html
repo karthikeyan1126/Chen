@@ -26,6 +26,9 @@
         /* --- HEADER --- */
         header {
             position: fixed;
+            top: 0; /* Ensures it is pinned exactly to the top */
+            left: 0; /* Ensures it starts at the far left edge */
+            width: 100%; /* Forces the header to span the entire screen width */
             background: var(--light-grey);
             padding: 15px 5%;
             display: flex;
@@ -33,7 +36,7 @@
             align-items: center;
             margin-top: 0px;
             margin-bottom: 2px;
-            z-index: 0;
+            z-index: 999; /* Increased from 0 to guarantee it stays on top */
         }
         .logo-container img {
             height: 50px;
