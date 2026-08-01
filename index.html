@@ -24,19 +24,16 @@
         img { max-width: 100%; display: block; }
         
         /* --- HEADER --- */
-        header {
-            position: fixed;
-            top: 0; /* Ensures it is pinned exactly to the top */
-            left: 0; /* Ensures it starts at the far left edge */
-            width: 100%; /* Forces the header to span the entire screen width */
-            background: var(--light-grey);
-            padding: 15px 5%;
+        .header-section {
+            position: fixed; /* or absolute */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px; /* Example height */
+            background-color: #ffffff; /* Gives the header a solid background */
+            z-index: 100; /* Ensures it stays on top */
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 0px;
-            margin-bottom: 2px;
-            z-index: 999; /* Increased from 0 to guarantee it stays on top */
         }
         .logo-container img {
             height: 50px;
